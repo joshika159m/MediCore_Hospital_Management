@@ -18,5 +18,10 @@ public abstract class User {
         System.out.println("Phone : " + phone);
         System.out.println("Role  : " + getRole());
     }
+    @Override
+    public String toString() {
+        return name + " (" + getRole() + ")";
+    }
+
 
 }
