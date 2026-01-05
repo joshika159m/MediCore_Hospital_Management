@@ -1,4 +1,5 @@
 package com.medicore.main;
+import com.medicore.model.Appointment;
 
 import com.medicore.model.Availability;
 import java.time.LocalDate;
@@ -27,6 +28,15 @@ public class MediCoreApp {
         System.out.println(slot);
         slot.markBooked();
         System.out.println(slot);
+
+        try {
+            Appointment appt2 = new Appointment(p1, d1, slot);
+            System.out.println(appt2);
+        } catch (IllegalStateException e) {
+            System.out.println("Booking failed: " + e.getMessage());
+        }
+
+
 
     }
 }
