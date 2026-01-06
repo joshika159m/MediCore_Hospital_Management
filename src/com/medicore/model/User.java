@@ -4,6 +4,18 @@ public abstract class User {
     protected int id;
     protected  String name;
     protected String phone;
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
 
     public User(int id,String name,String phone){
         this.id=id;
