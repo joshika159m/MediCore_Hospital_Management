@@ -37,6 +37,10 @@ public class Availability {
     public LocalTime getEndTime() {
         return endTime;
     }
+    public void markAvailable() {
+        this.booked = false;
+    }
+
 
     @Override
     public String toString() {

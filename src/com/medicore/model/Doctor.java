@@ -1,6 +1,8 @@
 package com.medicore.model;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+
 
 public class Doctor extends User {
 
@@ -42,5 +44,15 @@ public class Doctor extends User {
         }
         return freeSlots;
     }
+    public List<Availability> getAvailableSlotsByDate(LocalDate date) {
+        List<Availability> result = new ArrayList<>();
+        for (Availability slot : availabilitySlots) {
+            if (!slot.isBooked() && slot.getDate().equals(date)) {
+                result.add(slot);
+            }
+        }
+        return result;
+    }
+
 
 }
