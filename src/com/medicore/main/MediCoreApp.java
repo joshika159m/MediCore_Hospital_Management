@@ -29,20 +29,38 @@ public class MediCoreApp {
         System.out.println();
 
         // Create availability slot (NOT booked manually)
-        Availability slot = new Availability(
+        Availability slot1 = new Availability(
                 LocalDate.of(2026, 1, 10),
                 LocalTime.of(10, 0),
                 LocalTime.of(10, 30)
         );
 
+        Availability slot2 = new Availability(
+                LocalDate.of(2026, 1, 10),
+                LocalTime.of(11, 0),
+                LocalTime.of(11, 30)
+        );
+
+        d1.addAvailability(slot1);
+        d1.addAvailability(slot2);
+        System.out.println("Available Slots:");
+        for (Availability slot : d1.getAvailableSlots()) {
+            System.out.println(slot);
+        }
+
+
+
         // Appointment service handles booking logic
+
         AppointmentService service = new AppointmentService();
 
-        try {
-            Appointment appointment = service.bookAppointment(p1, d1, slot);
-            System.out.println(appointment);
-        } catch (IllegalStateException e) {
-            System.out.println("Booking failed: " + e.getMessage());
+        Appointment appt = service.bookAppointment(p1, d1, slot1);
+        System.out.println(appt);
+        System.out.println("\nAvailable Slots After Booking:");
+        for (Availability slot : d1.getAvailableSlots()) {
+            System.out.println(slot);
         }
+
+
     }
 }
