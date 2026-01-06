@@ -32,6 +32,7 @@ It is built to understand core Java, object-oriented programming, and basic back
 
 ## Project Structure
 
+```text
 com.medicore
 ├── main
 │   └── MediCoreApp.java
@@ -53,7 +54,7 @@ com.medicore
 │   └── FileStorageService.java
 │       // File-based storage handling
 
-
+```
 ---
 
 ## How the System Works
